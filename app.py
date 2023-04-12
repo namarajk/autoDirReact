@@ -1,4 +1,6 @@
 import os
+#links = ["about", "blog", "contact", "home", "portfolio", "pricing", "resume", "services", "sidebar", "testimonials"]
+#about, blog, contact, home, portfolio, pricing, resume, services, sidebar,testimonials
 
 # Get input names separated by commas
 folder_names = input("Enter folder names (separated by commas): ").split(",")
@@ -14,7 +16,8 @@ for folder_name in folder_names:
     folder_name = folder_name.strip()
     os.mkdir(os.path.join(output_folder_name, folder_name))
 
-    jsx_file_name = os.path.join(output_folder_name, folder_name, f"{folder_name}.jsx")
+    jsx_file_name = os.path.join(output_folder_name, folder_name, f"{folder_name.capitalize()}.jsx")
+
     css_file_name = os.path.join(output_folder_name, folder_name, f"{folder_name}.css")
 
     with open(jsx_file_name, 'w') as jsx_file:
